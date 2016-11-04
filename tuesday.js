@@ -11,6 +11,7 @@ function Vehicle(type, line, lat, long, speed, full, vehicleNumber, late) {
   this.late = parseInt(late);
 };
 
+Vehicle.prototype.info = { city: "Portland", state: "Oregon", agency: "Trimet"};
 Vehicle.prototype.city = "Portland";
 Vehicle.prototype.state = "Oregon";
 Vehicle.prototype.agency = "Trimet";
