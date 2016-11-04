@@ -41,8 +41,7 @@ console.log("Hello".repeatify(3));
 // console.log(test());
 
 
-var Person = function() {
-};
+var Person = function() {};
 Person.prototype.describe = function() {
   console.log(this.name);
   console.log(this.age);
@@ -50,19 +49,30 @@ Person.prototype.describe = function() {
 Person.prototype.initialize = function(name, age) {
   this.name = name;
   this.age = age;
-}
+};
 
 var bob = new Person();
 bob.initialize("Bob", 30);
 bob.describe();
 
-var Student = function() {
-}
+var Student = function() {};
 Student.prototype = new Person();
 Student.prototype.learn = function(subject) {
   console.log(this.name + " learned " + subject);
 };
+
 var neo = new Student();
 neo.initialize("Neo", 20);
 neo.describe();
 neo.learn("karate");
+
+var Teacher = function () {};
+Teacher.prototype = new Person();
+Teacher.prototype.teach = function(subject) {
+  console.log(this.name + " teaches " + subject);
+};
+
+var morpheus = new Teacher();
+morpheus.initialize("Morpheus", 45);
+morpheus.describe();
+morpheus.teach("gun-kata");
